@@ -59,6 +59,24 @@
 
 %section.pad-section
   .container
+    %h2 Responsive Embed Helpers
+
+    .form-group.row
+      .col-sm-4
+        %h3 Youtube
+        = parse_youtube("https://www.youtube.com/watch?v=JwMEimlYJJc")
+      .col-sm-4
+        %h3 Loom
+        = parse_loom("https://www.loom.com/share/bc656707c3e24905aab328e490f255a2")
+      .col-sm-4
+        %h3 Vimeo
+        = parse_vimeo("https://vimeo.com/25323516")
+    
+    %h3 Soundcloud
+    = parse_soundcloud("https://soundcloud.com/internetmoneyrecords/17-lemonade-ft-don-toliver-gunna-nav-master")
+
+%section.pad-section
+  .container
     %h2 Alerts
     .alert.alert-primary{:role => "alert"}
       A simple primary alert—check it out!
