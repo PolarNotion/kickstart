@@ -39,7 +39,7 @@ abbr[title] {
 
 label {
   font-size: 16px;
-  display: block;
+  display: inline-block;
   color: var(--color-primary);
 }
 
@@ -358,6 +358,7 @@ table.table td .btn {
 
 .btn-navbar {
   margin-left: 1rem;
+  padding: 11px 18px;
 }
 
 .navdrawer-nav,
