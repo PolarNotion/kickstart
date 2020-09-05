@@ -11,11 +11,4 @@ class Admin::PagesController < Admin::AdminBaseController
     
     breadcrumb 'Utilities', :utilities_admin_pages_path
   end
-
-  def entries
-    @page_title  = 'Entries'
-    @impressions = Ahoy::Event.order(time: :desc)
-    
-    breadcrumb 'Entries', :entries_admin_pages_path
-  end
 end

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       collection do
         get :dashboard
         get :utilities
-        get :entries
       end
     end
 

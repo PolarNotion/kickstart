@@ -10,6 +10,8 @@ copyClipboard = (clicked_obj) ->
 
 document.addEventListener "turbolinks:load", ->
   
+  $('.colorPicker').minicolors()
+
   $('.triggerPrint').click ->
     window.print()
 

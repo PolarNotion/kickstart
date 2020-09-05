@@ -2,6 +2,8 @@
   .row
     .col-sm-6
       %h1= @page_title
-      %p.lead= @page_subtitle if @page_subtitle.present?
+      - if @page_subtitle.present?
+        %p.lead= @page_subtitle
+
     .col-sm-6
       = yield(:page_actions)

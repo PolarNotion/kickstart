@@ -1,6 +1,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery
+//= require jquery.minicolors
 //= require popper
 //= require bootstrap
 //= require material

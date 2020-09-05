@@ -4,6 +4,7 @@
     = render 'layouts/head'
 
   %body#admin
+    = render 'layouts/alerts'
     = render 'layouts/navigation'
 
     #navigation.navdrawer.navdrawer-permanent.navdrawer-permanent-clipped{"aria-hidden" => "true", tabindex: "-1"}
@@ -13,9 +14,6 @@
             = link_to dashboard_admin_pages_path, class: 'nav-link' do
               %i.material-icons.mr-3 dashboard
               Dashboard
-            = link_to entries_admin_pages_path, class: 'nav-link' do
-              %i.material-icons.mr-3 view_list
-              Entries
             = link_to admin_users_path, class: 'nav-link' do
               %i.material-icons.mr-3 person
               Users
@@ -27,9 +25,8 @@
               Settings
 
     #main
-      = render 'layouts/alerts'
       = render 'layouts/breadcrumbs'
-      = render 'layouts/header'
+      .bg-white= render 'layouts/header'
 
       %section.pad
         = yield
