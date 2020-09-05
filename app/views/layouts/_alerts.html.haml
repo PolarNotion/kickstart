@@ -1,5 +1,5 @@
 - if notice.present?
-  %p.pad.bg-success.notice= notice
+  %p.alert-banner.pad.bg-success.notice{ data: { fade_count: 5000 } }= notice
 
 - if alert.present?
-  %p.pad.bg-danger.alert= alert
+  %p.alert-banner.pad.bg-danger.alert{ data: { fade_count: 5000 } }= alert

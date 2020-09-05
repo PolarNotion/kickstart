@@ -170,41 +170,49 @@
             %th{scope: "col"} First
             %th{scope: "col"} Last
             %th{scope: "col"} Handle
+            %th.text-right{scope: "col"}
         %tbody
           %tr
             %th{scope: "row"} 1
             %td Mark
             %td Otto
             %td @mdo
+            %td.text-right= link_to 'Table Button', '#', class: 'btn btn-primary'
+
           %tr.table-primary
             %th{scope: "row"} 1
             %td Mark
             %td Otto
             %td @mdo
+            %td.text-right= link_to 'Table Button', '#', class: 'btn btn-primary'
 
           %tr.table-secondary
             %th{scope: "row"} 1
             %td Mark
             %td Otto
             %td @mdo
+            %td.text-right= link_to 'Table Button', '#', class: 'btn btn-primary'
 
           %tr.table-danger
             %th{scope: "row"} 1
             %td Mark
             %td Otto
             %td @mdo
+            %td.text-right= link_to 'Table Button', '#', class: 'btn btn-primary'
 
           %tr.table-dark
             %th{scope: "row"} 1
             %td Mark
             %td Otto
             %td @mdo
+            %td.text-right= link_to 'Table Button', '#', class: 'btn btn-primary'
 
           %tr.table-light
             %th{scope: "row"} 1
             %td Mark
             %td Otto
             %td @mdo
+            %td.text-right= link_to 'Table Button', '#', class: 'btn btn-primary'
         
 %section
   .container

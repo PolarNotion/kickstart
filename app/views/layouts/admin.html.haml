@@ -4,7 +4,6 @@
     = render 'layouts/head'
 
   %body#admin
-    = render 'layouts/alerts'
     = render 'layouts/navigation'
 
     #navigation.navdrawer.navdrawer-permanent.navdrawer-permanent-clipped{"aria-hidden" => "true", tabindex: "-1"}
@@ -28,14 +27,9 @@
               Settings
 
     #main
+      = render 'layouts/alerts'
       = render 'layouts/breadcrumbs'
-
-      %header
-        .row
-          .col-sm-6
-            %h1= @page_title
-          .col-sm-6
-            = yield(:page_actions)
+      = render 'layouts/header'
 
       %section.pad
         = yield

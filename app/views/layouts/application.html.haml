@@ -4,10 +4,10 @@
     = render 'layouts/head'
 
   %body
-    = render 'layouts/alerts'
     = render 'layouts/navigation'
 
     #main
+      = render 'layouts/alerts'
       = yield
 
     = render 'layouts/footer'
