@@ -1,27 +1,15 @@
-$color_primary: #5e5eff;
-$color_primary_dark: darken($color_primary, 10%);
-$color_primary_light: lighten($color_primary, 10%);
-
-$color_red: red;
-$color_red_dark: darken($color_red, 10%);
-$color_red_light: lighten($color_red, 10%);
-
-$color_orange: orange;
-$color_orange_dark: darken($color_orange, 10%);
-$color_orange_light: lighten($color_orange, 10%);
-
-$color_yellow: #ffc107;
-$color_yellow_dark: darken($color_yellow, 10%);
-$color_yellow_light: lighten($color_yellow, 10%);
-
-$color_green:  #4fc151;
-$color_green_dark: darken($color_green, 10%);
-$color_green_light: lighten($color_green, 10%);
-
-$color_blue: blue;
-$color_blue_dark: darken($color_blue, 10%);
-$color_blue_light: lighten($color_blue, 10%);
-
-$color_purple: purple;
-$color_purple_dark: darken($color_purple, 10%);
-$color_purple_light: lighten($color_purple, 10%);
+:root {
+  --color-primary:         #4caf50;
+  --color-primary-dark:    #66BB6A;
+  --color-primary-light:   #66BB6A;
+  --color-primary-muted:   #e8f5e9;
+  --color-secondary:       #4caf50;
+  --color-secondary-dark:  #66BB6A;
+  --color-secondary-light: #66BB6A;
+  --color-secondary-muted: #e8f5e9;
+  --color-danger:          #ff0000;
+  --color-warning:         #ffbf2f;
+  --color-success:         #44be7d;
+  --color-info:            #44be7d;
+  --color-disabled:        #44be7d;
+}

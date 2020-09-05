@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "variables";
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -10,29 +10,42 @@ img {
 }
 
 h1, .h1 {
-  font-size: calc(3em + 1vw);
+  font-size: 30px;
 }
 
 h2, .h2 {
-  font-size: calc(2em + 1vw);
+  font-size: 25px;
 }
 
 h3, .h3 {
-  font-size: calc(1.5em + 1vw);
+  font-size: 20px;
 }
 
 h4, .h4 {
-  font-size: calc(1em + 1vw);
+  font-size: 18px;
+}
+
+label {
+  font-size: 16px;
+  display: block;
+  color: var(--color-primary);
 }
 
 p, li, blockquote {
-  font-size: calc(1em + .3vw);
+  font-size: 16px;
   line-height: 1.75;
 }
 
 #main {
   margin-top: 5rem;
   min-height: 90vh;
+}
+
+.hint {
+  display: inline-block;
+  font-style: italic;
+  padding: 10px 0px;
+  color: #666;
 }
 
 .pad {
@@ -63,6 +76,36 @@ p, li, blockquote {
   font-weight: bold;
 }
 
+.bg-green,
+.bg-success {
+  background-color: var(--color-success)!important;
+  color: white;
+}
+
+.bg-red,
+.bg-danger {
+  background-color: var(--color-danger)!important;
+  color: white;
+}
+
+.text-success,
+.text-green {
+  color: var(--color-success)!important;
+}
+
+.text-danger,
+.text-red {
+  color: var(--color-danger)!important;
+}
+
+.text-warning {
+  color: var(--color-warning)!important;
+}
+
+.img-xs {
+  max-width: 5rem;
+}
+
 .img-sm {
   max-width: 5rem;
 }
@@ -73,6 +116,31 @@ p, li, blockquote {
 
 .img-lg {
   max-width: 15rem;
+}
+
+.w-xs {
+  width: 50px;
+}
+
+.w-sm {
+  width: 100px;
+}
+
+.w-md {
+  width: 250px;
+}
+
+.w-lg {
+  width: 500px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.circle {
+  border-radius: 500px;
+  overflow: hidden;
 }
 
 .card {
@@ -93,7 +161,7 @@ p, li, blockquote {
 
 a:not(.btn) {
   cursor: pointer;
-  color: $color_primary;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -101,14 +169,14 @@ a:not(.btn) {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  background-color: $color_primary;
-  border-color: $color_primary;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: white;
   &:hover,
   &:active,
   &:focus {
-    background-color: $color_primary_dark;
-    border-color: $color_primary_dark;
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
   }
 }
 
@@ -162,6 +230,42 @@ a:not(.btn) {
   display: block;
   color: white;
   border-radius: 3px;
+}
+
+table.table {
+  background-color: transparent;
+}
+
+.table tbody td,
+.table tbody th {
+  vertical-align: middle;
+}
+
+.pagination a,
+.pagination span.current,
+.pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination {
+  .first,
+  .prev,
+  .page,
+  .next,
+  .last {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .page:first-child,
+  .first {
+    border-left: 1px solid #ddd;
+  }
 }
 
 .col-sm-fifth {
