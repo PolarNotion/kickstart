@@ -1,0 +1,97 @@
+#error_explanation.payment-errors.pad.mb-3
+
+#cc_information
+  .row
+    .col-8
+      .form-group
+        %label Card Number
+        %input#cardNumber.form-control.cc-numb{"data-stripe" => "number", maxlength: "20", type: "text"}/
+    .col-4
+      .form-group
+        %label CVC
+        %input#cardCsc.form-control.cc-cvc.with_help_btn{"data-stripe" => "cvc", maxlength: "4", :type => "text"}/
+  .row
+    .col-5
+      %label.mt-2{for: "card_exp_month"}
+        Exp.
+        %small (MM/YYYY)
+    .col-4
+      .form-group
+        %select#cardExpirationMonth.form-control.cc-exp-month{"data-stripe" => "exp-month"}
+          %option{value: "01"} 01 - Jan
+          %option{value: "02"} 02 - Feb
+          %option{value: "03"} 03 - Mar
+          %option{value: "04"} 04 - Apr
+          %option{value: "05"} 05 - May
+          %option{value: "06"} 06 - June
+          %option{value: "07"} 07 - July
+          %option{value: "08"} 08 - Aug
+          %option{value: "09"} 09 - Sept
+          %option{value: "10"} 10 - Oct
+          %option{value: "11"} 11 - Nov
+          %option{value: "12"} 12 - Dec
+    .col-3
+      %select#cardExpirationYear.form-control.cc-exp-yr{"data-stripe" => "exp-year"}
+        - (0..10).to_a.each do |y|
+          - yr = (DateTime.now + y.year).year
+          %option{:value => yr}= yr
+
+  / Requires Font Awesome
+  / https://fontawesome.com
+  / %ul.list-inline.text-dark.mb-0
+  /   %li.list-inline-item
+  /     %i.fa.fa-lg.fa-cc-visa
+  /   %li.list-inline-item
+  /     %i.fa.fa-lg.fa-cc-mastercard
+  /   %li.list-inline-item
+  /     %i.fa.fa-lg.fa-cc-discover
+  /   %li.list-inline-item
+  /     %i.fa.fa-lg.fa-cc-amex
+
+= content_for :page_head do
+  %script{src: "https://js.stripe.com/v2/", type: "text/javascript"}
+
+:javascript
+  Stripe.setPublishableKey("#{ENV['STRIPE_PUBLISHABLE_KEY']}");
+
+  var $form          = $('form'),
+      $button        = $form.find('input[type=submit]'),
+      $button_value  = $button.val();
+
+  $(function() {
+    $form.submit(function(event) {
+
+      // Disable the submit button to prevent repeated clicks:
+      $button.prop('disabled', true);
+      $button.val("Please wait...");
+
+      // Request a token from Stripe:
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from being submitted:
+      return false;
+    });
+  });
+
+  function stripeResponseHandler(status, response) {
+    // Grab the form:
+
+    if (response.error) { // Problem!
+
+      // Show the errors on the form:
+      $form.find('.payment-errors').text(response.error.message).slideDown();
+      $button.prop('disabled', false); // Re-enable submission
+      $button.val($button_value);
+
+    } else { // Token was created!
+
+      // Get the token ID:
+      var token = response.id;
+
+      // Insert the token ID into the form so it gets submitted to the server:
+      $form.append($('<input type="hidden" name="stripeToken">').val(token));
+
+      // Submit the form:
+      $form.get(0).submit();
+    }
+  };

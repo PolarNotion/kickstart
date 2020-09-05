@@ -1,0 +1,23 @@
+.form-group
+  - if title
+    %label= title
+
+  = f.association :address do |a|
+    .form-group
+      = a.input :street_line_1, input_html: { class: 'form-control' }
+    .form-group
+      = a.input :street_line_2, input_html: { class: 'form-control' }
+    
+    .row
+      .col-sm-8
+        .form-group
+          = a.input :city, input_html: { class: 'form-control' }
+      .col-sm-4
+        .form-group
+          = a.input :state, input_html: { class: 'form-control' }
+      .col-sm-6
+        .form-group
+          = a.input :zip, input_html: { class: 'form-control' }
+      .col-sm-6
+        .form-group
+          = a.input :country, input_html: { class: 'form-control chosen' }

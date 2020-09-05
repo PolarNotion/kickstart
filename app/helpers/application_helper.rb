@@ -32,4 +32,12 @@ module ApplicationHelper
     
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def url_to_json_params(url)
+    params = url.split('?').last
+
+    params.split('&')
+          .map { |x| { x.split('=').first => x.split('=').last } }
+          .to_json
+  end
 end

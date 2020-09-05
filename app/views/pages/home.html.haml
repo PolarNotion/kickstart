@@ -62,18 +62,26 @@
     %h2 Responsive Embed Helpers
 
     .form-group.row
-      .col-sm-4
-        %h3 Youtube
-        = parse_youtube("https://www.youtube.com/watch?v=JwMEimlYJJc")
-      .col-sm-4
-        %h3 Loom
-        = parse_loom("https://www.loom.com/share/bc656707c3e24905aab328e490f255a2")
-      .col-sm-4
-        %h3 Vimeo
-        = parse_vimeo("https://vimeo.com/25323516")
-    
-    %h3 Soundcloud
-    = parse_soundcloud("https://soundcloud.com/internetmoneyrecords/17-lemonade-ft-don-toliver-gunna-nav-master")
+      .col-sm-6
+        .form-group
+          %h3 Youtube
+          = parse_youtube("https://www.youtube.com/watch?v=JwMEimlYJJc")
+
+        .form-group
+          %h3 Loom
+          = parse_loom("https://www.loom.com/share/bc656707c3e24905aab328e490f255a2")
+
+        .form-group
+          %h3 Vimeo
+          = parse_vimeo("https://vimeo.com/25323516")
+      .col-sm-6
+        .form-group
+          %h3 Video Ask
+          = parse_videoask("https://www.videoask.com/fkds4x4eg")
+
+        .form-group
+          %h3 Soundcloud
+          = parse_soundcloud("https://soundcloud.com/internetmoneyrecords/17-lemonade-ft-don-toliver-gunna-nav-master")
 
 %section.pad-section
   .container

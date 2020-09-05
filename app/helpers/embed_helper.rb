@@ -53,6 +53,11 @@ module EmbedHelper
     embed = render "shared/components/video/loom", url: url
   end
 
+  def parse_videoask(string)
+    embed = render "shared/components/video/videoask", url: string
+    
+  end
+
   def parse_soundcloud(string)
     url   = strip_tags(string).split('<p>').first
     embed = render "shared/components/audio/soundcloud", url: url
