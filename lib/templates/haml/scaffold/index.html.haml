@@ -1,0 +1,21 @@
+%h1 <%= plural_table_name.titleize %>
+
+= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, class: 'btn btn-primary'
+
+%table.table
+  %thead
+    %tr
+<% for attribute in attributes -%>
+      %th <%= attribute.human_name %>
+<% end -%>
+      %th
+
+  %tbody
+    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+      %tr
+<% for attribute in attributes -%>
+        %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+        %td.text-right
+          = link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-link'
+          = link_to 'Show', <%= singular_table_name %>, class: 'btn btn-outline-primary'
