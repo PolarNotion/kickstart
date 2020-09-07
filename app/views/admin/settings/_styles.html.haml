@@ -1,0 +1,32 @@
+%h3 Primary Color
+.form-group.row
+  .col-sm-3
+    %label.control-label Color
+    = f.text_field :primary_color, value: Setting.primary_color, class: 'form-control colorPicker'
+  .col-sm-3
+    %label.control-label Primary - Dark
+    = f.text_field :primary_color_dark, value: Setting.primary_color_dark, class: 'form-control colorPicker'
+  .col-sm-3
+    %label.control-label Primary - Light
+    = f.text_field :primary_color_light, value: Setting.primary_color_light, class: 'form-control colorPicker'
+  .col-sm-3
+    %label.control-label Primary - Muted
+    = f.text_field :primary_color_muted, value: Setting.primary_color_muted, class: 'form-control colorPicker'
+
+%h3 Secondary Color
+.form-group.row
+  .col-sm-3
+    %label.control-label Color
+    = f.text_field :secondary_color, value: Setting.secondary_color, class: 'form-control colorPicker'
+
+  .col-sm-3
+    %label.control-label Secondary - Dark
+    = f.text_field :secondary_color_dark, value: Setting.secondary_color_dark, class: 'form-control colorPicker'
+
+  .col-sm-3
+    %label.control-label Secondary - Light
+    = f.text_field :secondary_color_light, value: Setting.secondary_color_light, class: 'form-control colorPicker'
+
+  .col-sm-3
+    %label.control-label Secondary - Muted
+    = f.text_field :secondary_color_muted, value: Setting.secondary_color_muted, class: 'form-control colorPicker'

@@ -1,0 +1,25 @@
+
+.container-md
+  .form-group
+    %label.control-label Site Title
+    = f.text_field :site_title, value: Setting.site_title, class: "form-control", placeholder: "http://localhost"
+
+  .form-group
+    %label.control-label Admin Email
+    = f.text_field :admin_email, value: Setting.admin_email, class: "form-control", placeholder: "http://localhost"
+
+  .form-group
+    %label.control-label Terms and Conditions Url
+    = f.text_field :terms_and_conditions_url, value: Setting.terms_and_conditions_url, class: "form-control", placeholder: ""
+
+  .form-group
+    %label.control-label Privacy Policy Url
+    = f.text_field :privacy_policy_url, value: Setting.privacy_policy_url, class: "form-control", placeholder: ""
+
+  .form-group
+    %label.control-label Contact Us Url
+    = f.text_field :contact_us_url, value: Setting.contact_us_url, class: "form-control", placeholder: ""
+
+  .form-group
+    %label.control-label Copyright Content
+    = f.text_field :copyright_content, value: Setting.copyright_content, class: "form-control", placeholder: ""

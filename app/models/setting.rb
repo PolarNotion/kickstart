@@ -1,7 +1,7 @@
 class Setting < RailsSettings::Base
   cache_prefix { "v1" }
 
-  field :site_title,               default: "Web Application"
+  field :site_title,               default: "Kickstart App"
   field :admin_email,              default: "admin@example.com"
   field :terms_and_conditions_url, default: "https://..."
   field :privacy_policy_url,       default: "https://..."

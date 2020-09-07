@@ -1,63 +1,17 @@
+%ul.nav.nav-tabs.mb-3
+  %li= link_to "General", admin_settings_path, class: "nav-link #{'active' if current_page?(admin_settings_path)}"
+  %li= link_to "Styles", styles_admin_settings_path, class: "nav-link #{'active' if current_page?(styles_admin_settings_path)}"
+
 = form_for(Setting.new, url: admin_settings_path) do |f|
   .card
+    .card-header
+      %h2.mb-0= params[:action] == 'index' ? 'General' : params[:action].titleize
+
     .card-body
-      .container-md
-        .form-group
-          %label.control-label Site Title
-          = f.text_field :site_title, value: Setting.site_title, class: "form-control", placeholder: "http://localhost"
-
-        .form-group
-          %label.control-label Admin Email
-          = f.text_field :admin_email, value: Setting.admin_email, class: "form-control", placeholder: "http://localhost"
-
-        .form-group
-          %label.control-label Terms and Conditions Url
-          = f.text_field :terms_and_conditions_url, value: Setting.terms_and_conditions_url, class: "form-control", placeholder: ""
-
-        .form-group
-          %label.control-label Privacy Policy Url
-          = f.text_field :privacy_policy_url, value: Setting.privacy_policy_url, class: "form-control", placeholder: ""
-
-        .form-group
-          %label.control-label Contact Us Url
-          = f.text_field :contact_us_url, value: Setting.contact_us_url, class: "form-control", placeholder: ""
-
-        .form-group
-          %label.control-label Copyright Content
-          = f.text_field :copyright_content, value: Setting.copyright_content, class: "form-control", placeholder: ""
-
-      %h3 Primary Color
-      .form-group.row
-        .col-sm-3
-          %label.control-label Color
-          = f.text_field :primary_color, value: Setting.primary_color, class: 'form-control colorPicker'
-        .col-sm-3
-          %label.control-label Primary - Dark
-          = f.text_field :primary_color_dark, value: Setting.primary_color_dark, class: 'form-control colorPicker'
-        .col-sm-3
-          %label.control-label Primary - Light
-          = f.text_field :primary_color_light, value: Setting.primary_color_light, class: 'form-control colorPicker'
-        .col-sm-3
-          %label.control-label Primary - Muted
-          = f.text_field :primary_color_muted, value: Setting.primary_color_muted, class: 'form-control colorPicker'
-
-      %h3 Secondary Color
-      .form-group.row
-        .col-sm-3
-          %label.control-label Color
-          = f.text_field :secondary_color, value: Setting.secondary_color, class: 'form-control colorPicker'
-
-        .col-sm-3
-          %label.control-label Secondary - Dark
-          = f.text_field :secondary_color_dark, value: Setting.secondary_color_dark, class: 'form-control colorPicker'
-
-        .col-sm-3
-          %label.control-label Secondary - Light
-          = f.text_field :secondary_color_light, value: Setting.secondary_color_light, class: 'form-control colorPicker'
-
-        .col-sm-3
-          %label.control-label Secondary - Muted
-          = f.text_field :secondary_color_muted, value: Setting.secondary_color_muted, class: 'form-control colorPicker'
+      - if current_page?(styles_admin_settings_path)
+        = render "admin/settings/styles", f: f
+      - else
+        = render "admin/settings/general", f: f
 
     .card-footer
       = f.submit 'Save', class: 'btn btn-primary'

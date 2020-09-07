@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :settings,
-              only: [ :index, :create ]
+              only: [ :index, :create ] do
+
+      collection do
+        get :styles
+      end
+    end
 
     resources :pages,
               path: '/',

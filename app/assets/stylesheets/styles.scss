@@ -328,6 +328,10 @@ table.table td .btn {
   }
 }
 
+.nav-tabs .nav-link::before {
+  background-color: var(--color-primary)
+}
+
 .btn.btn-secondary {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);

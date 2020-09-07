@@ -6,18 +6,17 @@
           %blockquote.h1 We exist to build better software for startups, entrepreneurs, small-businesses, and those they serve.
         .col-sm-4
           %h3 Header Primary
-          %ul.list-unstled
-            %li= link_to 'Footer Link', '#'
-            %li= link_to 'Footer Link', '#'
-            %li= link_to 'Footer Link', '#'
-            %li= link_to 'Footer Link', '#'
+          %ul.list-unstyled
+            %li= link_to 'Footer Link', '#', class: 'btn btn-link'
+            %li= link_to 'Footer Link', '#', class: 'btn btn-link'
+            %li= link_to 'Footer Link', '#', class: 'btn btn-link'
+            %li= link_to 'Footer Link', '#', class: 'btn btn-link'
         .col-sm-4
           %h3 Header Secondary
-          %ul.list-unstled
-            %li= link_to 'Footer Link', '#'
-            %li= link_to 'Footer Link', '#'
-            %li= link_to 'Footer Link', '#'
-            %li= link_to 'Footer Link', '#'
+          %ul.list-unstyled
+            %li= link_to "Terms & Conditions", Setting.terms_and_conditions_url, class: 'btn btn-link'
+            %li= link_to "Privacy Policy", Setting.privacy_policy_url, class: 'btn btn-link'
+            %li= link_to "Contact Us", Setting.contact_us_url, class: 'btn btn-link'
   .pad-section
     .text-center.text-italic
       Your friendly, neighborhood

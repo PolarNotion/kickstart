@@ -1,11 +1,10 @@
 class Admin::SettingsController < Admin::AdminBaseController
+  before_action :_set_settings, only: [:index, :styles]
 
   def index
-    @page_title  = 'Settings'
-    
-    _track_action()
+  end
 
-    breadcrumb 'Settings', :admin_settings_path
+  def styles
   end
 
   def create
@@ -16,10 +15,21 @@ class Admin::SettingsController < Admin::AdminBaseController
 
     _track_action('updated')
 
-    redirect_to admin_settings_path, notice: "Setting was successfully updated."
+    flash[:notice] = 'Settings successfully updated.'
+    redirect_back(fallback_location: admin_settings_path)
   end
 
   private
+    def _set_settings
+      @page_title  = 'Settings'
+    
+      _track_action()
+
+      breadcrumb 'Settings', :admin_settings_path
+
+      render :index
+    end
+
     def setting_params
       params.require(:setting).permit(
         :site_title,

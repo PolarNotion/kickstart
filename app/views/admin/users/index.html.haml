@@ -1,20 +1,22 @@
-= render 'shared/fields/search'
+= content_for(:page_actions) do
+  = render 'shared/fields/search'
 
-%table.table
-  %thead
-    %tr
-      %th Email
-      %th Created
-      %th.text-right Record Changes
-  %tbody
-    - @users.each do |user|
+.card
+  %table.table
+    %thead
       %tr
-        %td
-          = user.email
-        %td
-          = format_date(user.created_at)
-          .small.text-muted= "#{distance_of_time_in_words(user.created_at, Time.now)} ago"
-        %td.text-right
-          = user.versions.count
+        %th Email
+        %th Created
+        %th.text-right Record Changes
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td
+            = user.email
+          %td
+            = format_date(user.created_at)
+            .small.text-muted= "#{distance_of_time_in_words(user.created_at, Time.now)} ago"
+          %td.text-right
+            = user.versions.count
 
-= paginate @users
+  = paginate @users
