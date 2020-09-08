@@ -11,61 +11,13 @@
 = display_meta_tags site: @meta_site_title, title: @meta_page_title, description: @meta_page_description, og: { site: @meta_site_title, title: @meta_page_title, description: @meta_page_description, keywords: @meta_page_keywords, type: @meta_page_image_type, url: request.original_url, prev: "#{request.referer}", image: @meta_page_image_url }, twitter: { card: "photo", site: @meta_site_title, image: { _: @meta_page_image_url, width:  450, height: 300 } }
 
 :css
-  body#admin {
-    background-color: #{Setting.primary_color_muted}!important;
-  }
-
-  .btn-primary,
-  .btn-outline-primary:hover,
-  .btn-outline-primary:active,
-  .btn-outline-primary:focus {
-    background-color: #{Setting.primary_color}!important;
-    border-color: #{Setting.primary_color}!important;
-  }
-
-  .btn-primary-light {
-    background-color: #{Setting.primary_color_light}!important;
-    border-color: #{Setting.primary_color_light}!important;
-  }
-
-  .btn-outline-primary {
-    border-color: #{Setting.primary_color}!important;
-    color: #{Setting.primary_color}!important;
-  }
-
-  .btn-outline-primary:hover {
-    color: white!important;
-  }
-
-  .btn-secondary,
-  .btn-outline-secondary:hover,
-  .btn-outline-secondary:active,
-  .btn-outline-secondary:focus {
-    background-color: #{Setting.secondary_color}!important;
-    border-color: #{Setting.secondary_color}!important;
-  }
-
-  .btn-secondary-light {
-    background-color: #{Setting.secondary_color_light}!important;
-    border-color: #{Setting.secondary_color_light}!important;
-  }
-
-  .btn-outline-secondary {
-    border-color: #{Setting.secondary_color}!important;
-    color: #{Setting.secondary_color}!important;
-  }
-
-  .btn-outline-secondary:hover {
-    color: white!important;
-  }
-
-  a:not(.btn),
-  .btn-link,
-  .btn-outline-link {
-    color: #{Setting.primary_color}!important;
-  }
-
-  a:hover:not(.btn),
-  .btn-link:hover, {
-    color: #{Setting.primary_color_dark}!important;
+  :root {
+    --color-primary:         #{Setting.primary_color};
+    --color-primary-dark:    #{Setting.primary_color_dark};
+    --color-primary-light:   #{Setting.primary_color_light};
+    --color-primary-muted:   #{Setting.primary_color_muted};
+    --color-secondary:       #{Setting.secondary_color};
+    --color-secondary-dark:  #{Setting.secondary_color_dark};
+    --color-secondary-light: #{Setting.secondary_color_light};
+    --color-secondary-muted: #{Setting.secondary_color_muted};
   }

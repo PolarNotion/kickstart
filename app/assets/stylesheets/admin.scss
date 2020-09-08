@@ -1,6 +1,7 @@
 @import "variables.scss";
 
 #admin {
+  background-color: var(--color-primary-muted)!important;
   header {
     border-bottom: 1px solid #eee;
     padding: 1.5rem 0rem;

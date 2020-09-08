@@ -45,7 +45,7 @@ blockquote {
   border-color: var(--color-primary)!important;
 }
 
-a:not(.btn),
+a:not(.btn):not(.dropdown-item),
 .btn-link,
 .btn-outline-link {
   color: var(--color-primary)!important;
@@ -284,12 +284,6 @@ a:not(.btn),
   }
 }
 
-a:not(.btn) {
-  cursor: pointer;
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
 .btn {
   text-transform: uppercase;
   font-size: 14px;
@@ -297,6 +291,9 @@ a:not(.btn) {
   /*letter-spacing: .05em;*/
   font-weight: 600;
   border-radius: var(--border-radius);
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.14),
+              0 0px 1px 0 rgba(0, 0, 0, 0.12),
+              1px 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn.btn-sm,
@@ -378,6 +375,9 @@ table.table td .btn {
 .border,
 .card {
   border-radius: 5px;
+}
+
+.border {
   overflow: hidden;
 }
 

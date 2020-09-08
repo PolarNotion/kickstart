@@ -18,5 +18,14 @@
             .small.text-muted= "#{distance_of_time_in_words(user.created_at, Time.now)} ago"
           %td.text-right
             = user.versions.count
+          %td.text-right
+            .dropdown
+              %button#dropdownMenuButton.btn.btn-light.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                Actions
+              .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
+                - if user.is_deactivated?
+                  = link_to 'Activate', activate_admin_user_path(user), method: :put, class: "text-success dropdown-item"
+                - else
+                  = link_to 'Deactivate', deactivate_admin_user_path(user), method: :put, class: "text-danger dropdown-item"
 
   = paginate @users

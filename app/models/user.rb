@@ -14,4 +14,16 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name,  presence: true
+
+  def is_deactivated?
+    deactivated_at.present? and deactivated_at < 0.minutes.ago
+  end
+
+  def deactivate!
+    update(deactivated_at: 0.minutes.ago)
+  end
+
+  def activate!
+    update(deactivated_at: nil)
+  end
 end
