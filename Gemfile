@@ -33,7 +33,12 @@ gem 'loaf'                                # Breadcrumbs
 gem 'sparkpost_rails'                     # Transaction Emails
 gem 'image_processing', '~> 1.2'          # Image Processing
 gem 'faker', '2.0'                        # Dummy Data
-gem 'aws-sdk-s3', require: false          # Image Storage on AWS 
+gem 'aws-sdk-s3', require: false          # Image Storage on AWS
+
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
 group :development, :test do
   gem 'byebug'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_113129) do
+ActiveRecord::Schema.define(version: 2020_11_30_095044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,20 @@ ActiveRecord::Schema.define(version: 2020_09_07_113129) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "oauth_providers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "uid"
+    t.datetime "confirmed_at"
+    t.string "token"
+    t.boolean "will_expire"
+    t.datetime "expires_at"
+    t.string "refresh_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_oauth_providers_on_user_id"
+  end
+
   create_table "settings", force: :cascade do |t|
     t.string "var", null: false
     t.text "value"
@@ -112,6 +126,7 @@ ActiveRecord::Schema.define(version: 2020_09_07_113129) do
     t.string "last_name"
     t.boolean "is_admin", default: false, null: false
     t.datetime "deactivated_at"
+    t.string "private_auth_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -128,4 +143,5 @@ ActiveRecord::Schema.define(version: 2020_09_07_113129) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "oauth_providers", "users"
 end

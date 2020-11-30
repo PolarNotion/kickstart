@@ -7,6 +7,7 @@ class Setting < RailsSettings::Base
   field :privacy_policy_url,       default: "https://..."
   field :contact_us_url,           default: "mailto:..."
   field :copyright_content,        default: 'Copyright 2020 Kickstart'
+  field :enable_omniauth,          defailt: 'false'
 
   field :primary_color,            default: "#00BAE0"
   field :primary_color_dark,       default: "#009ABA"

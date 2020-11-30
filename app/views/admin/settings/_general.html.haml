@@ -23,3 +23,7 @@
   .form-group
     %label.control-label Copyright Content
     = f.text_field :copyright_content, value: Setting.copyright_content, class: "form-control", placeholder: ""
+
+  .form-group
+    %label.control-label Enable Omniauth
+    = f.text_field :enable_omniauth, value: Setting.enable_omniauth, class: "form-control", placeholder: "", hint: 'true or false. Edit options in models/users.rb'

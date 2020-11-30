@@ -46,6 +46,7 @@ class Admin::SettingsController < Admin::AdminBaseController
         :secondary_color_dark,
         :secondary_color_light,
         :secondary_color_muted,
+        :enable_omniauth
       )
     end
 end

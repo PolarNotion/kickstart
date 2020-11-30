@@ -296,6 +296,30 @@ a:not(.btn):not(.dropdown-item),
               1px 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
+.btn-oauth {
+  box-shadow: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.alt-login-separator {
+  position: relative;
+  margin-bottom: 2rem;
+  &:after,
+  &:before {
+    content: "";
+    background: #dcdcdc;
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 31%;
+  }
+  &:after {
+    right: 0;
+  }
+}
+
 .btn.btn-sm,
 .btn-sm,
 table.table td .btn {
